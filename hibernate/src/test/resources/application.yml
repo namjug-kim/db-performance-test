@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/performance
+    hikari:
+      username: root
+      password: demo-password
+      auto-commit: false
+      minimum-idle: 100
+      maximum-pool-size: 100
+      pool-name: pool-hikari
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database: mysql
+    properties:
+      hibernate:
+        connection.provider_disables_autocommit: true
+        generate_statistics: false
+        format_sql: false
+        jdbc.batch_size: 500
+        order_inserts: true
+    generate-ddl: false
+    show-sql: false
+
+#logging:
+#  level:
+#    com.zaxxer.hikari.HikariConfig: DEBUG
+#    com.zaxxer.hikari: TRACE

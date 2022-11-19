@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/performance
+    username: root
+    password: demo-password
+    driver-class-name: io.vertx.mysqlclient.spi.MySQLDriver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        check_nullability: true
+        use_sql_comments: true
+        format_sql: true
+        show_sql: true
